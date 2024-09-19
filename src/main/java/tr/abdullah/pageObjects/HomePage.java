@@ -21,7 +21,16 @@ public class HomePage extends AndroidActions {
     @AndroidFindBy(id = "com.backdrops.wallpapers:id/toolbar_title")
     private WebElement appLogo;
 
+    @AndroidFindBy(id = "com.backdrops.wallpapers:id/search")
+    private WebElement searchButton;
+
     public boolean checkOpenHomePage() {
         return appLogo.isDisplayed();
+    }
+
+    public SearchPage goToSearchPage() {
+
+        searchButton.click();
+        return new SearchPage(driver);
     }
 }

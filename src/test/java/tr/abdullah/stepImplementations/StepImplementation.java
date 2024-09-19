@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import tr.abdullah.pageObjects.HomePage;
+import tr.abdullah.pageObjects.SearchPage;
 import tr.abdullah.testUtils.BaseTest;
 
 import java.io.IOException;
@@ -13,6 +14,9 @@ public class StepImplementation extends BaseTest {
 
     public Logger logger = LoggerFactory.getLogger(getClass());
     public HomePage homePage;
+    public SearchPage searchPage;
+
+    String wallpaperName;
 
     @Step("Backdrops uygulamasi acilir.")
     public void openApp() throws IOException {
@@ -63,18 +67,25 @@ public class StepImplementation extends BaseTest {
     }
 
     @Step("Arama ikonuna tiklanir.")
-    public void implementation5() {
+    public void goSearchPage() {
 
+        searchPage = homePage.goToSearchPage();
+        logger.info("Arama ikonuna tiklandi.");
     }
 
     @Step("Arama kismina <string> yazilir.")
-    public void implementation6(String wallpaperName) {
+    public void searchWallpapers(String wallpaperName) {
 
+        logger.info(wallpaperName + " isimli duvar kagidi araniyor...");
+        this.wallpaperName = wallpaperName;
+        searchPage.searchWallpaper(wallpaperName);
     }
 
     @Step("Arama sonucunda duvar kagidinin gozuktugu kontrol edilir.")
-    public void implementation7() {
+    public void checkWallpaperList() {
 
+        logger.info("Duvar kagidi kontrolu yapiliyor...");
+        searchPage.checkWallpaper(wallpaperName);
     }
 
     @Step("Cikan duvar kagidi favorilere eklenir.")
