@@ -89,28 +89,38 @@ public class StepImplementation extends BaseTest {
     }
 
     @Step("Cikan duvar kagidi favorilere eklenir.")
-    public void implementation8() {
+    public void addFavorites() {
 
+        searchPage.clickFavIcon();
+        logger.info("Duvar kagidi favorilere eklendi.");
     }
 
-    @Step("Favorilere eklendigine dair toast mesaj kontrol edilir.")
-    public void implementation9() {
+    @Step("Favorilere eklendigine dair kalp ikonu kontrol edilir.")
+    public void checkFavIcon() {
 
+        logger.info("Kalp ikonu kontrol ediliyor...");
+        Assert.assertTrue(searchPage.checkFavIcons());
     }
 
     @Step("Uygulama ana ekranina gecis yapilir.")
-    public void implementation10() {
+    public void backHomePage() throws InterruptedException {
 
+        homePage = searchPage.returnHomePage();
+        logger.info("Anasayfaya gecis yapildi.");
     }
 
     @Step("Favoriler sekmesine gecis yapilir.")
-    public void implementation11() {
+    public void goToFavoritesList() {
 
+        homePage.clickFavoritesTab();
+        logger.info("Favoriler sekmesine gecis yapildi.");
     }
 
     @Step("Favoriler kisminda duvar kagidinin gozuktugu kontrol edilir.")
-    public void implementation12() {
+    public void checkFavoritesWallpaper() {
 
+        logger.info("Duvar kagidi kontrol ediliyor...");
+        homePage.checkFavoriteWallpaper(wallpaperName);
     }
 
     @Step("Gozuken duvar kagidina tiklanir.")

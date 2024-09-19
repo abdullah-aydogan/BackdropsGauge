@@ -9,7 +9,7 @@ Favori Duvar Kagidini Telefon Ana Ekranina Uygula
 * "Orbital Dance" isimli duvar kagidi aratilir.
 * Arama sonucunda duvar kagidinin gozuktugu kontrol edilir.
 * Cikan duvar kagidi favorilere eklenir.
-* Favorilere eklendigine dair toast mesaj kontrol edilir.
+* Favorilere eklendigine dair kalp ikonu kontrol edilir.
 * Uygulama ana ekranina gecis yapilir.
 * Favoriler sekmesine gecis yapilir.
 * Favoriler kisminda duvar kagidinin gozuktugu kontrol edilir.
