@@ -14,5 +14,4 @@ Favori Duvar Kagidini Telefon Ana Ekranina Uygula
 * Favoriler sekmesine gecis yapilir.
 * Favoriler kisminda duvar kagidinin gozuktugu kontrol edilir.
 * Gozuken duvar kagidi telefon ana ekranina uygulanir.
-* Duvar kagidinin uygulandigina dair toast mesaj kontrol edilir.
 * Telefon ana ekranina gecis yapilir.

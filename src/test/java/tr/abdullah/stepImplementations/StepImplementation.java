@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import tr.abdullah.pageObjects.HomePage;
 import tr.abdullah.pageObjects.SearchPage;
+import tr.abdullah.pageObjects.WallpaperPage;
 import tr.abdullah.testUtils.BaseTest;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ public class StepImplementation extends BaseTest {
     public Logger logger = LoggerFactory.getLogger(getClass());
     public HomePage homePage;
     public SearchPage searchPage;
+    public WallpaperPage wallpaperPage;
 
     String wallpaperName;
 
@@ -48,6 +50,19 @@ public class StepImplementation extends BaseTest {
                 homePage = welcomePage.goToHomePage();
                 logger.info(btnName + " butonuna tiklandi.");
                 break;
+
+            case "Set":
+                wallpaperPage.clickSetBtn();
+                logger.info(btnName + " butonuna tiklandi.");
+                break;
+
+            case "Home Screen":
+                wallpaperPage.clickHomeScreenBtn();
+                logger.info(btnName + " butonuna tiklandi.");
+                break;
+
+            default:
+                logger.error("Butona tiklanirken hata olustu.");
         }
     }
 
@@ -124,17 +139,16 @@ public class StepImplementation extends BaseTest {
     }
 
     @Step("Gozuken duvar kagidina tiklanir.")
-    public void implementation13() {
+    public void clickWallpaper() {
 
-    }
-
-    @Step("Duvar kagidinin uygulandigina dair toast mesaj kontrol edilir.")
-    public void implementation14() {
-
+        wallpaperPage = homePage.clickWallpaperTitle();
+        logger.info("Duvar kagidina tiklandi.");
     }
 
     @Step("Telefon ana ekranina gecis yapilir.")
-    public void implementation15() {
+    public void switchHome() throws InterruptedException {
 
+        wallpaperPage.switchPhoneHomeScreen();
+        logger.info("Telefon ana ekranina gecis yapildi.");
     }
 }

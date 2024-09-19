@@ -50,4 +50,10 @@ public class HomePage extends AndroidActions {
     public void checkFavoriteWallpaper(String wallpaperName) {
         Assert.assertEquals(wallpaperTitles.get(0).getText(), wallpaperName);
     }
+
+    public WallpaperPage clickWallpaperTitle() {
+
+        wallpaperTitles.get(0).click();
+        return new WallpaperPage(driver);
+    }
 }
