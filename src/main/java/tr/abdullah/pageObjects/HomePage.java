@@ -24,7 +24,7 @@ public class HomePage extends AndroidActions {
     @AndroidFindBy(id = "com.backdrops.wallpapers:id/toolbar_title")
     private WebElement appLogo;
 
-    @AndroidFindBy(id = "com.backdrops.wallpapers:id/search")
+    @AndroidFindBy(id = "com.backdrops.wallpapers:id/menu_item_search")
     private WebElement searchButton;
 
     @AndroidFindBy(id = "com.backdrops.wallpapers:id/menu_favorite")
